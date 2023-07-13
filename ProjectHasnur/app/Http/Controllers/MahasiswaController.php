@@ -66,9 +66,11 @@ class MahasiswaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Mahasiswa $mahasiswa)
+    public function edit(string $id)
     {
-        //
+        $data['title'] = 'Edit data mahasiswa';
+        $data['mhs'] = DB::table('mahasiswas')->where('id', $id)->first();
+        return view('editmahasiswa', $data);
     }
 
     /**

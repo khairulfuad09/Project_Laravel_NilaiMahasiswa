@@ -28,9 +28,10 @@
                     <td>{{ $mhs->program_studi }}</td>
                     <td>{{ $mhs->no_hp }}</td>
                     <td>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+                        {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
                             Edit
-                        </button>
+                        </button> --}}
+                        <a class="btn btn-primary" href="/mahasiswa/{{ $mhs->id }}/edit">Edit</a>
                         <form action="/mahasiswa/{{ $mhs->id }}" method="post">
                             @method('delete')
                             @csrf
@@ -41,7 +42,7 @@
                 </tr>
 
                 <!-- Modal -->
-                <form action="/mahasiswa/{{ $mhs->id }}" method="post">
+                {{-- <form action="/mahasiswa/{{ $mhs->id }}" method="post">
                     @method('put')
                     @csrf
                     <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
@@ -97,7 +98,7 @@
                             </div>
                         </div>
                     </div>
-                </form>
+                </form> --}}
             @endforeach
         </tbody>
     </table>
@@ -119,18 +120,18 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Nim</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1"
-                            aria-describedby="emailHelp" name="nim" required>
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            name="nim" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Nama</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1"
-                            aria-describedby="emailHelp" name="nama" required>
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            name="nama" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Program Studi</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1"
-                            aria-describedby="emailHelp" name="program_studi" required>
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            name="program_studi" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">No Hp</label>

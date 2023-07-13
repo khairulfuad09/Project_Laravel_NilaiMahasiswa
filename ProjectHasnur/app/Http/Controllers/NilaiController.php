@@ -75,9 +75,11 @@ class NilaiController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Nilai $nilai)
+    public function edit(string $id)
     {
-        //
+        $data['title'] = 'Edit Nilai';
+        $data['nl'] = DB::table('nilais')->where('id', $id)->first();
+        return view('editnilai', $data);
     }
 
     /**
